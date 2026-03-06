@@ -2,16 +2,16 @@
 @import "katex/dist/katex.min.css";
 
 :root {
-  --bg-primary: #0d0b14;
-  --bg-secondary: #13101e;
-  --bg-tertiary: #1a1628;
-  --border: #2a2340;
-  --border-bright: #3d3560;
-  --text-primary: #f0ecff;
-  --text-secondary: #9d93c4;
-  --text-tertiary: #5e5680;
-  --accent-violet: #7c5cfc;
-  --accent-violet-dim: #3d2e7e;
+  --bg-primary: #12140b;
+  --bg-secondary: #1b1e10;
+  --bg-tertiary: #162818;
+  --border: #656641;
+  --border-bright: #576035;
+  --text-primary: #fff6ec;
+  --text-secondary: #c4af93;
+  --text-tertiary: #807056;
+  --accent-violet: #fc5c5c;
+  --accent-violet-dim: #2e657e;
   --accent-pink: #e879a0;
   --accent-teal: #2dd4bf;
   --accent-amber: #f59e0b;
@@ -101,7 +101,7 @@ body {
 
 .term-function:hover,
 .term-function[data-active="true"] {
-  background-color: rgba(124, 92, 252, 0.2);
+  background-color: rgba(239, 252, 92, 0.2);
 }
 
 .term-subscript:hover,
@@ -112,7 +112,7 @@ body {
 .bg-gradient-mesh {
   background-image: radial-gradient(
       circle at 10% 20%,
-      rgba(124, 92, 252, 0.35),
+      rgba(2, 0, 12, 0.35),
       transparent 55%
     ),
     radial-gradient(
