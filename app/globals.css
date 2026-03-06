@@ -1,26 +1,161 @@
 @import "tailwindcss";
+@import "katex/dist/katex.min.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0d0b14;
+  --bg-secondary: #13101e;
+  --bg-tertiary: #1a1628;
+  --border: #2a2340;
+  --border-bright: #3d3560;
+  --text-primary: #f0ecff;
+  --text-secondary: #9d93c4;
+  --text-tertiary: #5e5680;
+  --accent-violet: #7c5cfc;
+  --accent-violet-dim: #3d2e7e;
+  --accent-pink: #e879a0;
+  --accent-teal: #2dd4bf;
+  --accent-amber: #f59e0b;
+  --accent-sky: #38bdf8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-display: var(--font-dm-serif-display);
+  --font-body: var(--font-dm-sans);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), "DM Sans", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "DM Serif Display", serif;
+}
+
+.font-body {
+  font-family: var(--font-body), "DM Sans", sans-serif;
+}
+
+.katex-display {
+  margin: 0;
+}
+
+.term-variable,
+.term-operator,
+.term-constant,
+.term-greek,
+.term-function,
+.term-subscript {
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 0 2px;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.term-variable {
+  color: var(--accent-sky);
+}
+
+.term-operator {
+  color: var(--accent-pink);
+}
+
+.term-constant {
+  color: var(--accent-teal);
+}
+
+.term-greek {
+  color: var(--accent-amber);
+}
+
+.term-function {
+  color: var(--accent-violet);
+}
+
+.term-subscript {
+  color: var(--text-secondary);
+}
+
+.term-variable:hover,
+.term-variable[data-active="true"] {
+  background-color: rgba(56, 189, 248, 0.18);
+}
+
+.term-operator:hover,
+.term-operator[data-active="true"] {
+  background-color: rgba(232, 121, 160, 0.2);
+}
+
+.term-constant:hover,
+.term-constant[data-active="true"] {
+  background-color: rgba(45, 212, 191, 0.22);
+}
+
+.term-greek:hover,
+.term-greek[data-active="true"] {
+  background-color: rgba(245, 158, 11, 0.2);
+}
+
+.term-function:hover,
+.term-function[data-active="true"] {
+  background-color: rgba(124, 92, 252, 0.2);
+}
+
+.term-subscript:hover,
+.term-subscript[data-active="true"] {
+  background-color: rgba(157, 147, 196, 0.16);
+}
+
+.bg-gradient-mesh {
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(124, 92, 252, 0.35),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(56, 189, 248, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 0% 80%,
+      rgba(232, 121, 160, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 90% 90%,
+      rgba(45, 212, 191, 0.25),
+      transparent 55%
+    );
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(240, 236, 255, 0.12) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
 }
