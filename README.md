@@ -1,4 +1,4 @@
-This was a fun challenge in combining Next.js 15 and AI to tackle educational tech. The goal was to take raw LaTeX or physics formulas and instantly generate a 'beautified' explanation. It uses a term-by-term breakdown logic to deconstruct complexity, making it way easier for students (or curious developers) to wrap their heads around the heavy stuff.
+This was a fun challenge in combining Next.js 15 and AI to tackle educational tech. The goal was to take raw LaTeX or physics formulas and instantly generate a 'beautified' explanation. It uses a term-by-term breakdown logic to deconstruct complexity, making it way easier for students (or curious developers) to wrap their heads around the heavy stuff. So, I created this prototype to play around!
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
